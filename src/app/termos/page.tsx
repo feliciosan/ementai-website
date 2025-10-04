@@ -1,10 +1,11 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { CONTACT_ADDRESS, CONTACT_EMAIL } from "@/utils/contact-info";
 
 export const metadata = {
   title: "Termos de Serviço - Ementai",
   description:
-    "Termos de Serviço da Ementai. Conheça os termos de uso da nossa plataforma de cardápios digitais.",
+    "Termos de Serviço da Ementai. Conheça os termos de uso da nossa plataforma de menus online.",
 };
 
 export default function Terms() {
@@ -24,8 +25,8 @@ export default function Terms() {
 
           <p>
             Bem-vindo à Ementai! Estes Termos de Serviço (&quot;Termos&quot;)
-            regem o uso da nossa plataforma de cardápios digitais. Ao usar
-            nossos serviços, você concorda com estes termos.
+            regem o uso da nossa plataforma de menus online. Ao usar nossos
+            serviços, você concorda com estes termos.
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
@@ -45,10 +46,8 @@ export default function Terms() {
           <p>A Ementai oferece:</p>
 
           <ul className="list-disc pl-6 space-y-2">
-            <li>
-              Plataforma para criação e gerenciamento de cardápios digitais
-            </li>
-            <li>Geração de QR codes para acesso aos cardápios</li>
+            <li>Plataforma para criação e gerenciamento de menus online</li>
+            <li>Geração de QR codes para acesso aos menus</li>
             <li>Ferramentas de personalização e branding</li>
             <li>Analytics e relatórios de desempenho</li>
             <li>Suporte técnico e atendimento ao cliente</li>
@@ -236,16 +235,13 @@ export default function Terms() {
 
           <p>Para questões sobre estes termos, entre em contato:</p>
 
-          <div className="bg-gray-50 p-6 rounded-lg mt-4">
-            <p>
-              <strong>Email:</strong> legal@ementai.com.br
-            </p>
-            <p>
-              <strong>Telefone:</strong> (11) 99999-9999
-            </p>
-            <p>
-              <strong>Endereço:</strong> São Paulo, SP - Brasil
-            </p>
+          <div className="bg-gray-50 p-6 rounded-lg mt-4 space-y-2">
+            <div>
+              <strong>Email:</strong> <span>{CONTACT_EMAIL}</span>
+            </div>
+            <div>
+              <strong>Endereço:</strong> <span>{CONTACT_ADDRESS}</span>
+            </div>
           </div>
 
           <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">

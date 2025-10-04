@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { CONTACT_ADDRESS, CONTACT_EMAIL } from "@/utils/contact-info";
 
 export const metadata = {
   title: "Política de Privacidade - Ementai",
@@ -23,10 +24,9 @@ export default function Privacy() {
           </p>
 
           <p>
-            A Ementai (&quot;nós&quot;, &quot;nosso&quot; ou
-            &quot;empresa&quot;) está comprometida em proteger a privacidade e
-            segurança das informações pessoais dos usuários de nossa plataforma
-            de cardápios digitais.
+            A Ementai está comprometida em proteger a privacidade e segurança
+            das informações pessoais dos usuários de nossa plataforma de menus
+            online.
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
@@ -41,7 +41,7 @@ export default function Privacy() {
             <li>
               Informações do restaurante (nome, endereço, tipo de cozinha)
             </li>
-            <li>Dados do cardápio (pratos, preços, descrições, imagens)</li>
+            <li>Dados do menu (pratos, preços, descrições, imagens)</li>
             <li>
               Informações de pagamento (processadas por terceiros seguros)
             </li>
@@ -67,7 +67,7 @@ export default function Privacy() {
           </h2>
 
           <ul className="list-disc pl-6 space-y-2">
-            <li>Fornecer e manter nossa plataforma de cardápios digitais</li>
+            <li>Fornecer e manter nossa plataforma de menus online</li>
             <li>Processar pagamentos e gerenciar assinaturas</li>
             <li>Oferecer suporte técnico e atendimento ao cliente</li>
             <li>Melhorar nossos serviços e desenvolver novos recursos</li>
@@ -212,16 +212,13 @@ export default function Privacy() {
             política, entre em contato:
           </p>
 
-          <div className="bg-gray-50 p-6 rounded-lg mt-4">
-            <p>
-              <strong>Email:</strong> privacidade@ementai.com.br
-            </p>
-            <p>
-              <strong>Telefone:</strong> (11) 99999-9999
-            </p>
-            <p>
-              <strong>Endereço:</strong> São Paulo, SP - Brasil
-            </p>
+          <div className="bg-gray-50 p-6 rounded-lg mt-4 space-y-2">
+            <div>
+              <strong>Email:</strong> <span>{CONTACT_EMAIL}</span>
+            </div>
+            <div>
+              <strong>Endereço:</strong> <span>{CONTACT_ADDRESS}</span>
+            </div>
           </div>
 
           <p className="mt-8 text-sm text-gray-600">

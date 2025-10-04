@@ -1,14 +1,14 @@
 # Ementai - Website Oficial
 
-Website oficial da Ementai, uma plataforma SaaS para criação de cardápios digitais com QR Code para restaurantes e estabelecimentos alimentícios.
+Website oficial da Ementai, uma plataforma SaaS para criação de menus online com QR Code para restaurantes e estabelecimentos alimentícios.
 
 ## 🚀 Sobre o Projeto
 
-A Ementai é uma solução completa que permite aos restaurantes criar cardápios digitais profissionais, gerar QR codes para acesso sem contato e oferecer uma experiência moderna aos seus clientes.
+A Ementai é uma solução completa que permite aos restaurantes criar menus online profissionais, gerar QR codes para acesso sem contato e oferecer uma experiência moderna aos seus clientes.
 
 ### Principais Funcionalidades
 
-- **Cardápios Digitais**: Criação e gerenciamento de cardápios online
+- **Menus Online**: Criação e gerenciamento de menus online
 - **QR Codes Personalizados**: Geração de QR codes com branding personalizado
 - **Design Responsivo**: Otimizado para todos os dispositivos
 - **Personalização Completa**: Cores, logos, fontes e layouts customizáveis

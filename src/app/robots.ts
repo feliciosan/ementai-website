@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/admin/", "/api/"],
     },
-    sitemap: "https://ementai.com.br/sitemap.xml",
+    sitemap: "https://ementai.com/sitemap.xml",
   };
 }

@@ -13,15 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ementai - Cardápios Digitais com QR Code para Restaurantes",
+  title: "Ementai - Menus Online com QR Code para Restaurantes",
   description:
-    "Transforme seu cardápio em uma experiência digital. Crie cardápios online, gere QR codes e ofereça atendimento sem contato aos seus clientes.",
+    "Transforme seu menu em uma experiência digital. Crie menus online, gere QR codes e ofereça atendimento sem contato aos seus clientes.",
   keywords:
-    "cardápio digital, QR code, restaurante, menu digital, cardápio online, atendimento sem contato",
+    "menu online, QR code, restaurante, menu digital, cardápio online, cardápio digital, atendimento sem contato",
   openGraph: {
-    title: "Ementai - Cardápios Digitais para Restaurantes",
-    description:
-      "Transforme seu cardápio em uma experiência digital com QR codes",
+    title: "Ementai - Menus Online para Restaurantes",
+    description: "Transforme seu menu em uma experiência digital com QR codes",
     type: "website",
     locale: "pt_BR",
   },

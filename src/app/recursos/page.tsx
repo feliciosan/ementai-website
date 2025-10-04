@@ -4,45 +4,36 @@ import {
   Palette,
   BarChart3,
   Clock,
-  Users,
   Shield,
-  Zap,
   Camera,
-  Globe,
-  Settings,
   Layers,
-  Download,
   Share2,
   Star,
   TrendingUp,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import HeroInfo from "@/components/HeroInfo";
 
 export const metadata = {
-  title:
-    "Recursos - Ementai | Funcionalidades do Sistema de Cardápios Digitais",
+  title: "Recursos - Ementai | Funcionalidades do Sistema de Menus Online",
   description:
-    "Descubra todos os recursos da Ementai para criar cardápios digitais profissionais. QR codes, personalização, analytics e muito mais.",
+    "Descubra todos os recursos da Ementai para criar menus online profissionais. QR codes, personalização, analytics e muito mais.",
 };
 
 export default function Features() {
   return (
     <div className="min-h-screen bg-white">
+      {/* Header */}
       <Header />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-teal-50 to-cyan-50 py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Recursos Completos para
-            <span className="text-teal-600"> Cardápios Digitais</span>
-          </h1>
-          <p className="text-xl text-gray-600 mb-8">
-            Descubra todas as funcionalidades que fazem da Ementai a melhor
-            escolha para digitalizar seu restaurante.
-          </p>
-        </div>
+        <HeroInfo
+          titleStart="Recursos completos para"
+          titleEndColored="menus online"
+          description="Descubra todas as funcionalidades que fazem da Ementai a melhor escolha para digitalizar seu restaurante."
+        />
       </section>
 
       {/* Core Features */}
@@ -60,7 +51,7 @@ export default function Features() {
               </h3>
               <p className="text-gray-600 mb-6">
                 Gere QR codes personalizados que direcionam seus clientes
-                diretamente para o cardápio. Com design elegante e opções de
+                diretamente para o menu. Com design elegante e opções de
                 customização para combinar com sua marca.
               </p>
               <ul className="space-y-2 text-gray-700">
@@ -113,7 +104,7 @@ export default function Features() {
                     <span className="font-semibold">Logo Personalizada</span>
                   </div>
                   <div className="text-sm text-gray-600">
-                    Upload de logo, fontes personalizadas, cores da marca
+                    Upload de logo e cores da marca
                   </div>
                 </div>
               </div>
@@ -124,9 +115,8 @@ export default function Features() {
                 Personalização Total
               </h3>
               <p className="text-gray-600 mb-6">
-                Customize cada detalhe do seu cardápio para refletir a
-                identidade visual da sua marca. Cores, fontes, layout e muito
-                mais.
+                Customize cada detalhe do seu menu para refletir a identidade
+                visual da sua marca. Cores, layout e muito mais.
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-center">
@@ -139,11 +129,7 @@ export default function Features() {
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-teal-600 rounded-full mr-3"></span>
-                  Escolha de fontes
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-teal-600 rounded-full mr-3"></span>
-                  Templates profissionais
+                  Informações do seu negócio
                 </li>
               </ul>
             </div>
@@ -151,14 +137,18 @@ export default function Features() {
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <BarChart3 className="h-16 w-16 text-teal-600 mb-6" />
+              <div className="flex items-center space-x-3 mb-6">
+                <BarChart3 className="h-16 w-16 text-teal-600" />
+                <span className="bg-orange-100 text-orange-800 text-sm font-semibold px-3 py-1 rounded-full">
+                  Em breve
+                </span>
+              </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Analytics Avançado
               </h3>
               <p className="text-gray-600 mb-6">
-                Entenda como seus clientes interagem com seu cardápio. Veja
-                quais pratos são mais visualizados e tome decisões baseadas em
-                dados.
+                Entenda como seus clientes interagem com seu menu. Veja quais
+                pratos são mais visualizados e tome decisões baseadas em dados.
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-center">
@@ -244,8 +234,8 @@ export default function Features() {
                 Galeria de Fotos
               </h3>
               <p className="text-gray-600">
-                Adicione fotos profissionais dos seus pratos para tornar o
-                cardápio mais atrativo e aumentar as vendas.
+                Adicione fotos profissionais dos seus pratos para tornar o menu
+                mais atrativo e aumentar as vendas.
               </p>
             </div>
 
@@ -255,41 +245,8 @@ export default function Features() {
                 Categorias Organizadas
               </h3>
               <p className="text-gray-600">
-                Organize seu cardápio em categorias lógicas: entradas, pratos
+                Organize seu menu em categorias lógicas: entradas, pratos
                 principais, bebidas, sobremesas e muito mais.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-sm">
-              <Globe className="h-12 w-12 text-teal-600 mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Multi-idiomas
-              </h3>
-              <p className="text-gray-600">
-                Crie cardápios em português, inglês e espanhol para atender
-                turistas e clientes internacionais.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-sm">
-              <Settings className="h-12 w-12 text-teal-600 mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Configurações Avançadas
-              </h3>
-              <p className="text-gray-600">
-                Controle horários de funcionamento, disponibilidade de pratos,
-                promoções especiais e muito mais.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-sm">
-              <Download className="h-12 w-12 text-teal-600 mb-4" />
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Exportação Flexível
-              </h3>
-              <p className="text-gray-600">
-                Exporte seus cardápios em PDF para impressão ou compartilhamento
-                quando necessário.
               </p>
             </div>
 
@@ -300,7 +257,7 @@ export default function Features() {
               </h3>
               <p className="text-gray-600">
                 Links diretos para redes sociais, WhatsApp e outras plataformas.
-                Divulgue seu cardápio onde quiser.
+                Divulgue seu menu onde quiser.
               </p>
             </div>
 
@@ -319,7 +276,7 @@ export default function Features() {
       </section>
 
       {/* Integration Section */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
@@ -388,7 +345,7 @@ export default function Features() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-teal-600 to-cyan-600">

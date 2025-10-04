@@ -3,9 +3,13 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
+import {
+  CONTACT_ADDRESS,
+  CONTACT_EMAIL,
+  CONTACT_PHONE,
+} from "@/utils/contact-info";
 
 interface ContactFormData {
-  name: string;
   email: string;
   phone: string;
   restaurant: string;
@@ -67,43 +71,54 @@ export default function ContactForm() {
         <h3 className="text-2xl font-bold text-gray-900 mb-6">Fale Conosco</h3>
         <div className="space-y-6">
           <div className="flex items-center space-x-4">
-            <Phone className="h-6 w-6 text-teal-600" />
-            <div>
-              <p className="font-semibold text-gray-900">Telefone</p>
-              <p className="text-gray-600">(11) 99999-9999</p>
-            </div>
+            <a
+              href={`https://wa.me/${CONTACT_PHONE}?text=Olá! Gostaria de saber mais sobre o Ementai para meu restaurante.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-4 p-6 bg-teal-50 rounded-lg transition-colors group"
+            >
+              <div className="bg-green-500 p-2 rounded-full group-hover:bg-green-600 transition-colors">
+                <Phone className="h-4 w-4 text-white" />
+              </div>
+              <div>
+                <p className="font-semibold text-gray-900 group-hover:text-green-700">
+                  WhatsApp
+                </p>
+                <p className="text-gray-600 text-sm group-hover:text-green-600">
+                  Falo conosco rapidamente via WhatsApp
+                </p>
+              </div>
+            </a>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 pl-6">
             <Mail className="h-6 w-6 text-teal-600" />
             <div>
               <p className="font-semibold text-gray-900">Email</p>
-              <p className="text-gray-600">contato@ementai.com.br</p>
+              <p className="text-gray-600">{CONTACT_EMAIL}</p>
             </div>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 pl-6">
             <MapPin className="h-6 w-6 text-teal-600" />
             <div>
               <p className="font-semibold text-gray-900">Endereço</p>
-              <p className="text-gray-600">São Paulo, SP - Brasil</p>
+              <p className="text-gray-600">{CONTACT_ADDRESS}</p>
             </div>
           </div>
         </div>
 
         <div className="mt-8 p-6 bg-teal-50 rounded-lg">
           <h4 className="font-semibold text-teal-800 mb-2">
-            Horário de Atendimento
+            Retorno do Atendimento
           </h4>
           <div className="text-sm text-teal-700 space-y-1">
-            <p>Segunda a Sexta: 9h às 18h</p>
-            <p>Sábado: 9h às 14h</p>
-            <p>Domingo: Fechado</p>
+            <p>Nossa equipe entrará em contato em até 24 horas.</p>
           </div>
         </div>
       </div>
 
       {/* Contact Form */}
       <div>
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div>
             <label
               htmlFor="restaurant"
@@ -117,7 +132,7 @@ export default function ContactForm() {
               {...register("restaurant", {
                 required: "Nome do restaurante é obrigatório",
               })}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent ${
+              className={`w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent text-gray-700 placeholder-gray-500 ${
                 errors.restaurant ? "border-red-500" : "border-gray-300"
               }`}
               placeholder="Ex: Pizzaria do João"
@@ -128,28 +143,6 @@ export default function ContactForm() {
               </p>
             )}
           </div>
-
-          <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-gray-700 mb-2"
-            >
-              Seu Nome*
-            </label>
-            <input
-              type="text"
-              id="name"
-              {...register("name", { required: "Nome é obrigatório" })}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent ${
-                errors.name ? "border-red-500" : "border-gray-300"
-              }`}
-              placeholder="Seu nome completo"
-            />
-            {errors.name && (
-              <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
-            )}
-          </div>
-
           <div>
             <label
               htmlFor="email"
@@ -167,7 +160,7 @@ export default function ContactForm() {
                   message: "Email inválido",
                 },
               })}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent ${
+              className={`w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent text-gray-700 placeholder-gray-500 ${
                 errors.email ? "border-red-500" : "border-gray-300"
               }`}
               placeholder="seu@email.com"
@@ -178,7 +171,6 @@ export default function ContactForm() {
               </p>
             )}
           </div>
-
           <div>
             <label
               htmlFor="phone"
@@ -190,11 +182,10 @@ export default function ContactForm() {
               type="tel"
               id="phone"
               {...register("phone")}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent text-gray-700 placeholder-gray-500"
               placeholder="(11) 99999-9999"
             />
           </div>
-
           <div>
             <label
               htmlFor="message"
@@ -206,7 +197,7 @@ export default function ContactForm() {
               id="message"
               rows={4}
               {...register("message", { required: "Mensagem é obrigatória" })}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent ${
+              className={`w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent text-gray-700 placeholder-gray-500 ${
                 errors.message ? "border-red-500" : "border-gray-300"
               }`}
               placeholder="Como podemos ajudar você?"
@@ -217,7 +208,6 @@ export default function ContactForm() {
               </p>
             )}
           </div>
-
           <button
             type="submit"
             disabled={isLoading}
@@ -241,7 +231,7 @@ export default function ContactForm() {
           </button>
         </form>
 
-        <p className="mt-4 text-sm text-gray-600">
+        <p className="mt-4 text-sm text-gray-600 text-center">
           * Campos obrigatórios. Seus dados estão seguros e não serão
           compartilhados.
         </p>

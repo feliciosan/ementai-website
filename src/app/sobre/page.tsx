@@ -1,30 +1,28 @@
 import { Users, Target, Lightbulb, Heart } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import HeroInfo from "@/components/HeroInfo";
 
 export const metadata = {
   title: "Sobre Nós - Ementai",
   description:
-    "Conheça a missão da Ementai em transformar a experiência gastronômica com cardápios digitais.",
+    "Conheça a missão da Ementai em transformar a experiência gastronômica com menus online.",
 };
 
 export default function About() {
   return (
     <div className="min-h-screen bg-white">
+      {/* Header */}
       <Header />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-teal-50 to-cyan-50 py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Nossa Missão é Transformar a
-            <span className="text-teal-600"> Experiência Gastronômica</span>
-          </h1>
-          <p className="text-xl text-gray-600 mb-8">
-            Acreditamos que a tecnologia pode tornar o atendimento em
-            restaurantes mais eficiente, seguro e agradável para todos.
-          </p>
-        </div>
+        <HeroInfo
+          titleStart="Nossa missão é transformar a"
+          titleEndColored="experiência gastronômica"
+          description="Acreditamos que a tecnologia pode tornar o atendimento em
+            restaurantes mais eficiente, seguro e agradável para todos."
+        />
       </section>
 
       {/* Story Section */}
@@ -42,15 +40,15 @@ export default function About() {
               praticidade.
             </p>
             <p className="mb-6">
-              Percebemos que cardápios físicos não eram apenas um problema de
+              Percebemos que menus físicos não eram apenas um problema de
               higiene, mas também representavam custos constantes de impressão,
               dificuldades para atualizações e uma experiência pouco moderna
               para os clientes.
             </p>
             <p>
               Assim surgiu a Ementai: uma plataforma simples, intuitiva e
-              poderosa que permite a qualquer restaurante criar cardápios
-              digitais profissionais em minutos, não em dias.
+              poderosa que permite a qualquer restaurante criar menus digitais
+              profissionais em minutos, não em dias.
             </p>
           </div>
         </div>
@@ -131,7 +129,7 @@ export default function About() {
             </div>
             <div>
               <div className="text-4xl font-bold text-teal-600 mb-2">1M+</div>
-              <div className="text-gray-700">Cardápios visualizados</div>
+              <div className="text-gray-700">Menus visualizados</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-teal-600 mb-2">

@@ -1,110 +1,110 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ContactForm from "@/components/ContactForm";
 import { Clock, HelpCircle, MessageSquare, Zap } from "lucide-react";
+import ContactSection from "@/components/ContactSection";
+import { CONTACT_EMAIL } from "@/utils/contact-info";
+import HeroInfo from "@/components/HeroInfo";
 
 export const metadata = {
   title: "Contato - Ementai | Fale Conosco",
   description:
-    "Entre em contato com a equipe Ementai. Estamos aqui para ajudar você a transformar seu restaurante com cardápios digitais.",
+    "Entre em contato com a equipe Ementai. Estamos aqui para ajudar você a transformar seu restaurante com menus online.",
 };
 
 export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
+      {/* Header */}
       <Header />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-teal-50 to-cyan-50 py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Estamos Aqui para
-            <span className="text-teal-600"> Ajudar Você</span>
-          </h1>
-          <p className="text-xl text-gray-600 mb-8">
-            Tem dúvidas sobre nossos cardápios digitais? Nossa equipe
-            especializada está pronta para ajudar.
-          </p>
-        </div>
+        <HeroInfo
+          titleStart="Estamos aqui para"
+          titleEndColored="ajudar você"
+          description="Tem dúvidas sobre nossos menus online? Nossa equipe especializada
+            está pronta para ajudar."
+        />
       </section>
 
       {/* Contact Options */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8 mb-16">
-            <div className="text-center p-6 bg-gray-50 rounded-xl">
-              <MessageSquare className="h-12 w-12 text-teal-600 mx-auto mb-4" />
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Chat Online
-              </h3>
-              <p className="text-gray-600 text-sm mb-4">
-                Resposta imediata durante o horário comercial
-              </p>
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="text-center p-6 bg-gray-50 rounded-xl flex flex-col justify-between">
+              <div>
+                <MessageSquare className="h-12 w-12 text-teal-600 mx-auto mb-4" />
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  Chat Online
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Resposta imediata durante o horário comercial
+                </p>
+              </div>
               <button className="text-teal-600 hover:text-teal-700 font-semibold">
                 Iniciar Chat
               </button>
             </div>
 
-            <div className="text-center p-6 bg-gray-50 rounded-xl">
-              <HelpCircle className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Central de Ajuda
-              </h3>
-              <p className="text-gray-600 text-sm mb-4">
-                Encontre respostas para perguntas frequentes
-              </p>
-              <button className="text-blue-600 hover:text-blue-700 font-semibold">
+            <div className="text-center p-6 bg-gray-50 rounded-xl flex flex-col justify-between">
+              <div>
+                <HelpCircle className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  Central de Ajuda
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Encontre respostas para perguntas frequentes
+                </p>
+              </div>
+              <a
+                href="#contact"
+                className="text-blue-600 hover:text-blue-700 font-semibold"
+              >
                 Ver Artigos
-              </button>
+              </a>
             </div>
 
-            <div className="text-center p-6 bg-gray-50 rounded-xl">
-              <Zap className="h-12 w-12 text-yellow-600 mx-auto mb-4" />
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Suporte Técnico
-              </h3>
-              <p className="text-gray-600 text-sm mb-4">
-                Problemas técnicos ou bugs
-              </p>
-              <button className="text-yellow-600 hover:text-yellow-700 font-semibold">
+            <div className="text-center p-6 bg-gray-50 rounded-xl flex flex-col justify-between">
+              <div>
+                <Zap className="h-12 w-12 text-yellow-600 mx-auto mb-4" />
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  Suporte Técnico
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Problemas técnicos ou bugs
+                </p>
+              </div>
+              <a
+                href="#contact"
+                className="text-yellow-600 hover:text-yellow-700 font-semibold"
+              >
                 Reportar Problema
-              </button>
+              </a>
             </div>
 
-            <div className="text-center p-6 bg-gray-50 rounded-xl">
-              <Clock className="h-12 w-12 text-green-600 mx-auto mb-4" />
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Agendamento
-              </h3>
-              <p className="text-gray-600 text-sm mb-4">
-                Agende uma demonstração personalizada
-              </p>
-              <button className="text-green-600 hover:text-green-700 font-semibold">
+            <div className="text-center p-6 bg-gray-50 rounded-xl flex flex-col justify-between">
+              <div>
+                <Clock className="h-12 w-12 text-green-600 mx-auto mb-4" />
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  Agendamento
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Agende uma demonstração personalizada
+                </p>
+              </div>
+              <a
+                href="#contact"
+                className="text-green-600 hover:text-green-700 font-semibold"
+              >
                 Agendar Demo
-              </button>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Main Contact Form */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Entre em Contato Conosco
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Preencha o formulário abaixo e nossa equipe entrará em contato em
-              até 24 horas.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-2xl shadow-sm p-8">
-            <ContactForm />
-          </div>
-        </div>
-      </section>
+      {/* Main Contact Section */}
+      <ContactSection />
 
       {/* FAQ Section */}
       <section className="py-20 bg-white">
@@ -119,13 +119,12 @@ export default function Contact() {
                 Quanto tempo demora para implementar?
               </h3>
               <p className="text-gray-700">
-                Você pode criar seu primeiro cardápio digital em menos de 30
-                minutos! Nossa plataforma é projetada para ser simples e
-                intuitiva.
+                Você pode criar seu primeiro menu online em menos de 30 minutos!
+                Nossa plataforma é projetada para ser simples e intuitiva.
               </p>
             </div>
 
-            <div className="border border-gray-200 rounded-lg p-6">
+            {/* <div className="border border-gray-200 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
                 Vocês oferecem treinamento?
               </h3>
@@ -134,7 +133,7 @@ export default function Contact() {
                 suporte personalizado para garantir que você aproveite ao máximo
                 nossa plataforma.
               </p>
-            </div>
+            </div> */}
 
             <div className="border border-gray-200 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
@@ -142,7 +141,7 @@ export default function Contact() {
               </h3>
               <p className="text-gray-700">
                 Claro! Nossa equipe pode ajudar você a importar seus dados de
-                outros sistemas de cardápio digital ou até mesmo de planilhas do
+                outros sistemas de menu online ou até mesmo de planilhas do
                 Excel.
               </p>
             </div>
@@ -153,7 +152,7 @@ export default function Contact() {
               </h3>
               <p className="text-gray-700">
                 Atualmente oferecemos suporte completo em português. Estamos
-                trabalhando para adicionar inglês e espanhol em breve.
+                trabalhando para adicionar outros idiomas em breve.
               </p>
             </div>
           </div>
@@ -171,15 +170,15 @@ export default function Contact() {
             atendimento, entre em contato conosco imediatamente.
           </p>
           <div className="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
-            <a
-              href="tel:+5511999999999"
+            {/* <a
+              href={`tel:${CONTACT_PHONE}`}
               className="inline-block bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors"
             >
-              Ligar Agora: (11) 99999-9999
-            </a>
+              Ligar Agora: {CONTACT_PHONE}
+            </a> */}
             <a
-              href="mailto:emergencia@ementai.com.br"
-              className="inline-block border border-red-600 text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-red-50 transition-colors"
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="inline-block bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors"
             >
               Email de Emergência
             </a>
