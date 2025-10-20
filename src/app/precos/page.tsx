@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroInfo from "@/components/HeroInfo";
 import TablePriceSection from "@/components/TablePriceSection";
+import { APP_URL } from "@/utils/links";
 
 export const metadata = {
   title: "Preços - Ementai | Planos para Menus Online",
@@ -208,9 +209,13 @@ export default function Pricing() {
             Comece grátis hoje mesmo e veja como é fácil criar menus digitais
             profissionais.
           </p>
-          <button className="bg-white text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors">
-            Experimente Grátis por 14 Dias
-          </button>
+          <a
+            href={APP_URL}
+            target="_blank"
+            className="bg-white text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"
+          >
+            Experimente Grátis
+          </a>
         </div>
       </section>
 

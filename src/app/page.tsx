@@ -17,6 +17,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import HeroInfo from "@/components/HeroInfo";
 import TablePriceSection from "@/components/TablePriceSection";
+import { APP_URL } from "@/utils/links";
 
 export default function Home() {
   return (
@@ -36,13 +37,21 @@ export default function Home() {
               profissional."
             />
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-teal-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-700 transition-colors flex items-center justify-center">
+              <a
+                href={APP_URL}
+                target="_blank"
+                className="bg-teal-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-700 transition-colors flex items-center justify-center"
+              >
                 Criar Meu Menu Online
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </button>
-              <button className="border border-teal-600 text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-50 transition-colors">
+              </a>
+              <a
+                href={`${APP_URL}/menu/restaurante-zuca`}
+                target="_blank"
+                className="border border-teal-600 text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-50 transition-colors"
+              >
                 Ver Demo
-              </button>
+              </a>
             </div>
 
             {/* Hero Image/QR Code Visual */}
@@ -341,9 +350,13 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <button className="bg-teal-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-700 transition-colors">
+            <a
+              href={`${APP_URL}`}
+              target="_blank"
+              className="bg-teal-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-700 transition-colors"
+            >
               Começar Agora - É Grátis
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -572,9 +585,13 @@ export default function Home() {
             atendimento com menus online.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors">
-              Experimente Grátis por 30 Dias
-            </button>
+            <a
+              href={APP_URL}
+              target="_blank"
+              className="bg-white text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"
+            >
+              Experimente Grátis
+            </a>
             <a
               href="#contact"
               className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-teal-600 transition-colors inline-block text-center"

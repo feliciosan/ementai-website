@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import Link from "next/link";
 import Image from "next/image";
 import { Fragment } from "react";
+import { APP_URL } from "@/utils/links";
 
 export default async function Header() {
   const headersList = await headers();
@@ -96,9 +97,13 @@ export default async function Header() {
             <button className="text-gray-700 hover:text-teal-600 transition-colors">
               Entrar
             </button>
-            <button className="bg-teal-600 text-white px-6 py-2 rounded-lg hover:bg-teal-700 transition-colors">
+            <a
+              href={APP_URL}
+              target="_blank"
+              className="bg-teal-600 text-white px-6 py-2 rounded-lg hover:bg-teal-700 transition-colors inline-block"
+            >
               Experimente Grátis
-            </button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -181,9 +186,13 @@ export default async function Header() {
               <button className="block w-full text-left text-gray-700 hover:text-teal-600">
                 Entrar
               </button>
-              <button className="block w-full bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700">
+              <a
+                href={APP_URL}
+                target="_blank"
+                className="block w-full bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700"
+              >
                 Experimente Grátis
-              </button>
+              </a>
             </div>
           </div>
         </div>

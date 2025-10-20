@@ -2,6 +2,7 @@ import { Users, Target, Lightbulb, Heart } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroInfo from "@/components/HeroInfo";
+import { APP_URL } from "@/utils/links";
 
 export const metadata = {
   title: "Sobre Nós - Ementai",
@@ -208,9 +209,13 @@ export default function About() {
             Junte-se aos centenas de restaurantes que já transformaram seu
             atendimento conosco.
           </p>
-          <button className="bg-white text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors">
+          <a
+            href={APP_URL}
+            target="_blank"
+            className="bg-white text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"
+          >
             Comece Sua Transformação Digital
-          </button>
+          </a>
         </div>
       </section>
 

@@ -1,3 +1,4 @@
+import { APP_URL } from "@/utils/links";
 import { CheckCircle } from "lucide-react";
 
 export default function TablePriceSection() {
@@ -58,9 +59,13 @@ export default function TablePriceSection() {
                 </li>
               </ul>
             </div>
-            <button className="w-full border border-teal-600 text-teal-600 py-3 rounded-lg hover:bg-teal-50 transition-colors font-semibold">
+            <a
+              href={APP_URL}
+              target="_blank"
+              className="w-full border border-teal-600 text-teal-600 py-3 rounded-lg hover:bg-teal-50 transition-colors font-semibold text-center"
+            >
               Começar Grátis
-            </button>
+            </a>
           </div>
 
           {/* Pro Plan */}

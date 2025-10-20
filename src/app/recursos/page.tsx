@@ -14,6 +14,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroInfo from "@/components/HeroInfo";
+import { APP_URL } from "@/utils/links";
 
 export const metadata = {
   title: "Recursos - Ementai | Funcionalidades do Sistema de Menus Online",
@@ -358,9 +359,13 @@ export default function Features() {
             Comece hoje mesmo e descubra como nossos recursos podem transformar
             seu restaurante.
           </p>
-          <button className="bg-white text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors">
+          <a
+            href={APP_URL}
+            target="_blank"
+            className="bg-white text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"
+          >
             Começar Teste Gratuito
-          </button>
+          </a>
         </div>
       </section>
 
