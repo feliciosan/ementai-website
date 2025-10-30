@@ -38,7 +38,7 @@ export default function Home() {
             />
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href={APP_URL}
+                href={`${APP_URL}/admin/signup`}
                 target="_blank"
                 className="bg-teal-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-700 transition-colors flex items-center justify-center"
               >
@@ -351,7 +351,7 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <a
-              href={`${APP_URL}`}
+              href={`${APP_URL}/admin/signup`}
               target="_blank"
               className="bg-teal-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-700 transition-colors"
             >

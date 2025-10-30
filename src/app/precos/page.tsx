@@ -210,7 +210,7 @@ export default function Pricing() {
             profissionais.
           </p>
           <a
-            href={APP_URL}
+            href={`${APP_URL}/admin/signup`}
             target="_blank"
             className="bg-white text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"
           >

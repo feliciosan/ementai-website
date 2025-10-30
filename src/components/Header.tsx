@@ -98,7 +98,7 @@ export default async function Header() {
               Entrar
             </button>
             <a
-              href={APP_URL}
+              href={`${APP_URL}/admin/signup`}
               target="_blank"
               className="bg-teal-600 text-white px-6 py-2 rounded-lg hover:bg-teal-700 transition-colors inline-block"
             >
@@ -187,7 +187,7 @@ export default async function Header() {
                 Entrar
               </button>
               <a
-                href={APP_URL}
+                href={`${APP_URL}/admin/signup`}
                 target="_blank"
                 className="block w-full bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700"
               >

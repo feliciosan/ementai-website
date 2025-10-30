@@ -60,7 +60,7 @@ export default function TablePriceSection() {
               </ul>
             </div>
             <a
-              href={APP_URL}
+              href={`${APP_URL}/admin/signup`}
               target="_blank"
               className="w-full border border-teal-600 text-teal-600 py-3 rounded-lg hover:bg-teal-50 transition-colors font-semibold text-center"
             >
