@@ -78,14 +78,14 @@ export default function Pricing() {
                     <td className="px-6 py-4 text-sm text-gray-900">
                       Categorias no menu
                     </td>
-                    <td className="px-6 py-4 text-center">Até 3</td>
+                    <td className="px-6 py-4 text-center">Até 4</td>
                     <td className="px-6 py-4 text-center">Ilimitadas</td>
                   </tr>
                   <tr>
                     <td className="px-6 py-4 text-sm text-gray-900">
                       Produtos por categoria
                     </td>
-                    <td className="px-6 py-4 text-center">Até 10</td>
+                    <td className="px-6 py-4 text-center">Até 5</td>
                     <td className="px-6 py-4 text-center">Ilimitados</td>
                   </tr>
                   <tr>

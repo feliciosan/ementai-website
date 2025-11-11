@@ -42,13 +42,13 @@ export default function TablePriceSection() {
                 <li className="flex items-center">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
                   <span className="text-gray-700">
-                    Até 3 categorias no Menu
+                    Até 4 categorias no Menu
                   </span>
                 </li>
                 <li className="flex items-center">
                   <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
                   <span className="text-gray-700">
-                    Até 10 produtos por categoria
+                    Até 5 produtos por categoria
                   </span>
                 </li>
                 <li className="flex items-center">
