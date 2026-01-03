@@ -129,9 +129,13 @@ export default function TablePriceSection() {
                 </li>
               </ul>
             </div>
-            <button className="w-full bg-teal-600 text-white py-3 rounded-lg hover:bg-teal-700 transition-colors font-semibold">
+            <a
+              href={`${APP_URL}/admin/signup`}
+              target="_blank"
+              className="w-full bg-teal-600 text-white py-3 rounded-lg hover:bg-teal-700 transition-colors font-semibold text-center"
+            >
               Escolher Menu Pro
-            </button>
+            </a>
           </div>
         </div>
       </div>

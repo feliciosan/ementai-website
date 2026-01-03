@@ -18,6 +18,7 @@ import Footer from "@/components/Footer";
 import HeroInfo from "@/components/HeroInfo";
 import TablePriceSection from "@/components/TablePriceSection";
 import { APP_URL } from "@/utils/links";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -46,7 +47,7 @@ export default function Home() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
               <a
-                href={`${APP_URL}/menu/restaurante-zuca`}
+                href={`${APP_URL}/menu/pizzaria-ementai`}
                 target="_blank"
                 className="border border-teal-600 text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-50 transition-colors"
               >
@@ -102,16 +103,21 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="bg-teal-600 p-3 rounded-2xl inline-block">
-                      <div className="bg-white p-2 rounded-lg">
-                        <QrCode className="h-40 w-40 text-gray-900" />
-                      </div>
-                    </div>
-                    <p className="mt-2 text-gray-600">
+                    <p className="mb-2 text-gray-600 text-sm">
                       Escaneie o QR Code
                       <br />
                       para ver o menu
                     </p>
+                    <div className="bg-teal-600 p-3 rounded-2xl inline-block">
+                      <div className="bg-white p-2 rounded-lg">
+                        <Image
+                          src="/qr-code-demo.png"
+                          alt="Demo QR Code"
+                          width={172}
+                          height={172}
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

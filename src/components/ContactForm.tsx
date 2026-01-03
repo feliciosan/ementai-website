@@ -30,14 +30,35 @@ export default function ContactForm() {
   const onSubmit = async (data: ContactFormData) => {
     setIsLoading(true);
 
-    // Simulate API call
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      console.log("Form data:", data);
-      setIsSubmitted(true);
-      reset();
+      // Submit to Netlify Forms
+      const formData = new FormData();
+      formData.append("form-name", "contato");
+      formData.append("restaurant", data.restaurant);
+      formData.append("email", data.email);
+      formData.append("phone", data.phone || "");
+      formData.append("message", data.message);
+
+      const formEntries: Record<string, string> = {};
+      formData.forEach((value, key) => {
+        formEntries[key] = value.toString();
+      });
+
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formEntries).toString(),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        reset();
+      } else {
+        throw new Error("Erro ao enviar formulário");
+      }
     } catch (error) {
       console.error("Error submitting form:", error);
+      alert("Erro ao enviar mensagem. Por favor, tente novamente.");
     } finally {
       setIsLoading(false);
     }
@@ -90,7 +111,7 @@ export default function ContactForm() {
               </div>
             </a>
           </div>
-          <div className="flex items-center space-x-4 pl-6">
+          {/* <div className="flex items-center space-x-4 pl-6">
             <Mail className="h-6 w-6 text-teal-600" />
             <div>
               <p className="font-semibold text-gray-900">Email</p>
@@ -103,10 +124,10 @@ export default function ContactForm() {
               <p className="font-semibold text-gray-900">Endereço</p>
               <p className="text-gray-600">{CONTACT_ADDRESS}</p>
             </div>
-          </div>
+          </div> */}
         </div>
 
-        <div className="mt-8 p-6 bg-teal-50 rounded-lg">
+        <div className="mt-4 p-6 bg-teal-50 rounded-lg">
           <h4 className="font-semibold text-teal-800 mb-2">
             Retorno do Atendimento
           </h4>
@@ -118,7 +139,16 @@ export default function ContactForm() {
 
       {/* Contact Form */}
       <div>
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <form
+          name="contato"
+          method="POST"
+          data-netlify="true"
+          onSubmit={handleSubmit(onSubmit)}
+          className="space-y-4"
+        >
+          {/* Hidden input for Netlify Forms */}
+          <input type="hidden" name="form-name" value="contato" />
+
           <div>
             <label
               htmlFor="restaurant"
