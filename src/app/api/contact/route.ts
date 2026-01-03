@@ -8,7 +8,6 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { restaurant, email, phone, message } = body;
 
-    // Validação básica
     if (!restaurant || !email || !message) {
       return NextResponse.json(
         { error: "Campos obrigatórios faltando" },
@@ -16,9 +15,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Enviar email via Resend
     await resend.emails.send({
-      from: "ementai.support@gmail.com",
+      from: "contato@ementai.com",
       to: "ementai.app@gmail.com",
       subject: `Novo Contato: ${restaurant}`,
       html: `
