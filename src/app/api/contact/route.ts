@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
 
     // Enviar email via Resend
     await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "Ementai <ementai.app@gmail.com>",
       to: "ementai.app@gmail.com",
       subject: `Novo Contato: ${restaurant}`,
       html: `
