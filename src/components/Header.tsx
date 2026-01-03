@@ -94,9 +94,13 @@ export default async function Header() {
           )}
 
           <div className="hidden lg:flex items-center space-x-4">
-            <button className="text-gray-700 hover:text-teal-600 transition-colors">
+            <a
+              href={`${APP_URL}/admin`}
+              target="_blank"
+              className="text-gray-700 hover:text-teal-600 transition-colors"
+            >
               Entrar
-            </button>
+            </a>
             <a
               href={`${APP_URL}/admin/signup`}
               target="_blank"
@@ -183,9 +187,13 @@ export default async function Header() {
               </Fragment>
             )}
             <div className="px-3 py-2 space-y-2">
-              <button className="block w-full text-left text-gray-700 hover:text-teal-600">
+              <a
+                href={`${APP_URL}/admin`}
+                target="_blank"
+                className="block w-full text-left text-gray-700 hover:text-teal-600"
+              >
                 Entrar
-              </button>
+              </a>
               <a
                 href={`${APP_URL}/admin/signup`}
                 target="_blank"
