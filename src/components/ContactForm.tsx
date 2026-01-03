@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useForm } from "react-hook-form";
 import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
 import {
   CONTACT_ADDRESS,
@@ -9,50 +8,35 @@ import {
   CONTACT_PHONE,
 } from "@/utils/contact-info";
 
-interface ContactFormData {
-  email: string;
-  phone: string;
-  restaurant: string;
-  message: string;
-}
-
 export default function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm<ContactFormData>();
-
-  const onSubmit = async (data: ContactFormData) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     setIsLoading(true);
 
-    try {
-      // Submit to Netlify Forms
-      const formData = new FormData();
-      formData.append("form-name", "contato");
-      formData.append("restaurant", data.restaurant);
-      formData.append("email", data.email);
-      formData.append("phone", data.phone || "");
-      formData.append("message", data.message);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
 
-      const formEntries: Record<string, string> = {};
-      formData.forEach((value, key) => {
-        formEntries[key] = value.toString();
-      });
+    try {
+      const formDataEntries = Object.fromEntries(formData);
+      const formDataString: Record<string, string> = {};
+
+      for (const [key, value] of Object.entries(formDataEntries)) {
+        formDataString[key] =
+          typeof value === "string" ? value : value.toString();
+      }
 
       const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formEntries).toString(),
+        body: new URLSearchParams(formDataString).toString(),
       });
 
       if (response.ok) {
         setIsSubmitted(true);
-        reset();
+        form.reset();
       } else {
         throw new Error("Erro ao enviar formulário");
       }
@@ -66,21 +50,25 @@ export default function ContactForm() {
 
   if (isSubmitted) {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
-        <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-        <h3 className="text-2xl font-bold text-green-800 mb-2">
-          Mensagem Enviada!
-        </h3>
-        <p className="text-green-700 mb-4">
-          Obrigado pelo contato! Nossa equipe entrará em contato em até 24
-          horas.
-        </p>
-        <button
-          onClick={() => setIsSubmitted(false)}
-          className="text-green-600 hover:text-green-700 font-semibold"
-        >
-          Enviar Nova Mensagem
-        </button>
+      <div className="grid md:grid-cols-2 gap-12">
+        <div className="md:col-span-2">
+          <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
+            <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
+            <h3 className="text-2xl font-bold text-green-800 mb-2">
+              Mensagem Enviada!
+            </h3>
+            <p className="text-green-700 mb-4">
+              Obrigado pelo contato! Nossa equipe entrará em contato em até 24
+              horas.
+            </p>
+            <button
+              onClick={() => setIsSubmitted(false)}
+              className="text-green-600 hover:text-green-700 font-semibold"
+            >
+              Enviar Nova Mensagem
+            </button>
+          </div>
+        </div>
       </div>
     );
   }
@@ -143,7 +131,7 @@ export default function ContactForm() {
           name="contato"
           method="POST"
           data-netlify="true"
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit}
           className="space-y-4"
         >
           {/* Hidden input for Netlify Forms */}
@@ -159,20 +147,13 @@ export default function ContactForm() {
             <input
               type="text"
               id="restaurant"
-              {...register("restaurant", {
-                required: "Nome do restaurante é obrigatório",
-              })}
-              className={`w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent text-gray-700 placeholder-gray-500 ${
-                errors.restaurant ? "border-red-500" : "border-gray-300"
-              }`}
+              name="restaurant"
+              required
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent text-gray-700 placeholder-gray-500"
               placeholder="Ex: Pizzaria do João"
             />
-            {errors.restaurant && (
-              <p className="mt-1 text-sm text-red-600">
-                {errors.restaurant.message}
-              </p>
-            )}
           </div>
+
           <div>
             <label
               htmlFor="email"
@@ -183,24 +164,13 @@ export default function ContactForm() {
             <input
               type="email"
               id="email"
-              {...register("email", {
-                required: "Email é obrigatório",
-                pattern: {
-                  value: /^\S+@\S+$/i,
-                  message: "Email inválido",
-                },
-              })}
-              className={`w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent text-gray-700 placeholder-gray-500 ${
-                errors.email ? "border-red-500" : "border-gray-300"
-              }`}
+              name="email"
+              required
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent text-gray-700 placeholder-gray-500"
               placeholder="seu@email.com"
             />
-            {errors.email && (
-              <p className="mt-1 text-sm text-red-600">
-                {errors.email.message}
-              </p>
-            )}
           </div>
+
           <div>
             <label
               htmlFor="phone"
@@ -211,11 +181,12 @@ export default function ContactForm() {
             <input
               type="tel"
               id="phone"
-              {...register("phone")}
+              name="phone"
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent text-gray-700 placeholder-gray-500"
               placeholder="(11) 99999-9999"
             />
           </div>
+
           <div>
             <label
               htmlFor="message"
@@ -225,19 +196,14 @@ export default function ContactForm() {
             </label>
             <textarea
               id="message"
+              name="message"
               rows={4}
-              {...register("message", { required: "Mensagem é obrigatória" })}
-              className={`w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent text-gray-700 placeholder-gray-500 ${
-                errors.message ? "border-red-500" : "border-gray-300"
-              }`}
+              required
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent text-gray-700 placeholder-gray-500"
               placeholder="Como podemos ajudar você?"
             />
-            {errors.message && (
-              <p className="mt-1 text-sm text-red-600">
-                {errors.message.message}
-              </p>
-            )}
           </div>
+
           <button
             type="submit"
             disabled={isLoading}

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -15,6 +15,11 @@ const geistMono = Geist_Mono({
   display: "swap", // Otimização para carregamento de fonte
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "Ementai - Menus Online com QR Code para Restaurantes",
   description:
@@ -26,11 +31,6 @@ export const metadata: Metadata = {
     description: "Transforme seu menu em uma experiência digital com QR codes",
     type: "website",
     locale: "pt_BR",
-  },
-  // Otimizações adicionais
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
   },
   robots: {
     index: true,
