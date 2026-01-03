@@ -19,19 +19,18 @@ export default function ContactForm() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
+    const data = {
+      restaurant: formData.get("restaurant") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      message: formData.get("message") as string,
+    };
+
     try {
-      const formDataEntries = Object.fromEntries(formData);
-      const formDataString: Record<string, string> = {};
-
-      for (const [key, value] of Object.entries(formDataEntries)) {
-        formDataString[key] =
-          typeof value === "string" ? value : value.toString();
-      }
-
-      const response = await fetch("/", {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formDataString).toString(),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
       });
 
       if (response.ok) {
@@ -127,16 +126,7 @@ export default function ContactForm() {
 
       {/* Contact Form */}
       <div>
-        <form
-          name="contato"
-          method="POST"
-          data-netlify="true"
-          onSubmit={handleSubmit}
-          className="space-y-4"
-        >
-          {/* Hidden input for Netlify Forms */}
-          <input type="hidden" name="form-name" value="contato" />
-
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label
               htmlFor="restaurant"
@@ -153,7 +143,6 @@ export default function ContactForm() {
               placeholder="Ex: Pizzaria do João"
             />
           </div>
-
           <div>
             <label
               htmlFor="email"
@@ -170,7 +159,6 @@ export default function ContactForm() {
               placeholder="seu@email.com"
             />
           </div>
-
           <div>
             <label
               htmlFor="phone"
@@ -186,7 +174,6 @@ export default function ContactForm() {
               placeholder="(11) 99999-9999"
             />
           </div>
-
           <div>
             <label
               htmlFor="message"
@@ -203,7 +190,6 @@ export default function ContactForm() {
               placeholder="Como podemos ajudar você?"
             />
           </div>
-
           <button
             type="submit"
             disabled={isLoading}
