@@ -57,12 +57,29 @@ export default function Home() {
 
             {/* Hero Image/QR Code Visual */}
             <div className="mt-16 relative">
-              <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-4xl mx-auto">
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-                      Menu Online
-                    </h3>
+              <div className="bg-white rounded-2xl shadow-2xl px-8 md:pr-0 pt-8 max-w-4xl mx-auto overflow-hidden">
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="flex flex-col">
+                    <div className="flex items-center space-x-6 mb-8">
+                      <div className="bg-teal-600 p-2 rounded-2xl inline-block">
+                        <div className="bg-white p-2 rounded-lg">
+                          <Image
+                            src="/qr-code-demo.png"
+                            alt="Demo QR Code"
+                            width={124}
+                            height={124}
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                          Menu Online
+                        </h3>
+                        <p className="mb-2 text-gray-600 text-sm">
+                          Escaneie o QR code para ver como funciona na prática!
+                        </p>
+                      </div>
+                    </div>
                     <div className="bg-white rounded-lg p-6 border border-gray-200">
                       <div className="space-y-4">
                         <div className="flex justify-between items-center pb-2 border-b border-gray-300">
@@ -102,22 +119,13 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <div className="text-center">
-                    <p className="mb-2 text-gray-600 text-sm">
-                      Escaneie o QR Code
-                      <br />
-                      para ver o menu
-                    </p>
-                    <div className="bg-teal-600 p-3 rounded-2xl inline-block">
-                      <div className="bg-white p-2 rounded-lg">
-                        <Image
-                          src="/qr-code-demo.png"
-                          alt="Demo QR Code"
-                          width={172}
-                          height={172}
-                        />
-                      </div>
-                    </div>
+                  <div className="flex">
+                    <Image
+                      src="/menu-mock.png"
+                      alt="Menu Online Ementai"
+                      width={720}
+                      height={720}
+                    />
                   </div>
                 </div>
               </div>
