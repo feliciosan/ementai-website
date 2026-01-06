@@ -214,7 +214,7 @@ export default function Pricing() {
             target="_blank"
             className="bg-white text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"
           >
-            Experimente Grátis
+            Criar menu grátis
           </a>
         </div>
       </section>

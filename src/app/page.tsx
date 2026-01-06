@@ -37,26 +37,8 @@ export default function Home() {
               atendimento sem contato aos seus clientes. Simples, rápido e
               profissional."
             />
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={`${APP_URL}/admin/signup`}
-                target="_blank"
-                className="bg-teal-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-700 transition-colors flex items-center justify-center"
-              >
-                Criar Meu Menu Online
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-              <a
-                href={`${APP_URL}/menu/pizzaria-ementai`}
-                target="_blank"
-                className="border border-teal-600 text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-50 transition-colors"
-              >
-                Ver Demo
-              </a>
-            </div>
-
             {/* Hero Image/QR Code Visual */}
-            <div className="mt-16 relative">
+            <div className="mt-10 mb-10 relative">
               <div className="bg-white rounded-2xl shadow-2xl px-8 md:pr-0 pt-8 max-w-4xl mx-auto overflow-hidden">
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="flex flex-col">
@@ -72,8 +54,8 @@ export default function Home() {
                         </div>
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                          Menu Online
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2 max-w-36 leading-tight">
+                          Menu online por QR Code
                         </h3>
                         <p className="mb-2 text-gray-600 text-sm">
                           Escaneie o QR code para ver como funciona na prática!
@@ -122,13 +104,30 @@ export default function Home() {
                   <div className="flex">
                     <Image
                       src="/menu-mock.png"
-                      alt="Menu Online Ementai"
+                      alt="Menu online Ementai"
                       width={720}
                       height={720}
                     />
                   </div>
                 </div>
               </div>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href={`${APP_URL}/admin/signup`}
+                target="_blank"
+                className="bg-teal-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-700 transition-colors flex items-center justify-center"
+              >
+                Criar menu grátis
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
+              <a
+                href={`${APP_URL}/menu/pizzaria-ementai`}
+                target="_blank"
+                className="border border-teal-600 text-center text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-50 transition-colors"
+              >
+                Ver menu na prática
+              </a>
             </div>
           </div>
         </div>
@@ -604,7 +603,7 @@ export default function Home() {
               target="_blank"
               className="bg-white text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors"
             >
-              Experimente Grátis
+              Criar menu grátis
             </a>
             <a
               href="#contact"

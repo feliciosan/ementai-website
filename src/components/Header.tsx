@@ -106,7 +106,7 @@ export default async function Header() {
               target="_blank"
               className="bg-teal-600 text-white px-6 py-2 rounded-lg hover:bg-teal-700 transition-colors inline-block"
             >
-              Experimente Grátis
+              Criar menu grátis
             </a>
           </div>
 
@@ -199,7 +199,7 @@ export default async function Header() {
                 target="_blank"
                 className="block w-full bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700"
               >
-                Experimente Grátis
+                Criar menu grátis
               </a>
             </div>
           </div>
